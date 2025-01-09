@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;  /* Keeping the background white */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Header Styling */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #9b59b6;  /* Lavender color */
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+/* Heart Icon */
+.heart {
+    font-size: 4rem;
+    color: #9b59b6;  /* Lavender color */
+}
+
+/* Love Message with Line-by-Line Fade-in Effect */
+.love-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #6a4c9c; /* Lavender color */
+    line-height: 1.6; /* Spacing between lines */
+    max-width: 600px; /* Limiting the width */
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden; /* Hide overflowing text */
+}
+
+/* Each paragraph for scroll animation */
+.love-message p {
+    margin: 10px 0; /* Add space between each paragraph */
+    font-weight: bold; /* Make text stand out */
+    opacity: 0; /* Initially hide the paragraphs */
+    animation: showText 3s ease-in-out forwards; /* Apply animation */
+    display: inline-block; /* Keep the paragraphs in block but inline style */
+}
+
+.love-message p:nth-child(1) {
+    animation-delay: 0s; /* First line appears immediately */
+}
+.love-message p:nth-child(2) {
+    animation-delay: 1s; /* Second line appears after 1 second */
+}
+.love-message p:nth-child(3) {
+    animation-delay: 2s; /* Third line appears after 2 seconds */
+}
+.love-message p:nth-child(4) {
+    animation-delay: 3s; /* Fourth line appears after 3 seconds */
+}
+.love-message p:nth-child(5) {
+    animation-delay: 4s; /* Fifth line appears after 4 seconds */
+}
+.love-message p:nth-child(6) {
+    animation-delay: 5s; /* Sixth line appears after 5 seconds */
+}
+
+/* Animation for text to fade in */
+@keyframes showText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optionally, add some background or soft border for emphasis */
+.love-message {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.photo-gallery h2 {
+    width: 100%;
+    color: #9b59b6;  /* Lavender color */
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.photo-gallery a {
+    display: inline-block;
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Heart Button */
+.heart-button {
+    background-color: #9b59b6;  /* Lavender button */
+    color: white;
+    font-size: 2rem;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heart Icon Inside Button */
+.heart-button::before {
+    content: '❤️';
+    font-size: 2rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover and Click Effects */
+.heart-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.heart-button:active::before {
+    transform: scale(1.2);
+    animation: clickAnimation 0.3s ease-out;
+}
+
+@keyframes clickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #9b59b6;  /* Lavender footer */
+    color: white;
+}
+
+.footer p {
+    font-size: 1.2rem;
+}
+
+/* Countdown */
+.countdown {
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    margin: 20px 0;
+    color: #9b59b6;  /* Lavender color */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for a digital look */
+    background-color: rgba(255, 255, 255, 0.8);  /* Slight white background */
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: inline-block; /* To fit the countdown inside a box */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for the countdown */
+.countdown:hover {
+    background-color: rgba(255, 255, 255, 1); /* Full white on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Countdown number (in case you want to style individual digits) */
+.countdown span {
+    font-size: 3rem; /* Bigger font for the countdown number */
+    font-weight: bold;
+    color: #9b59b6; /* Lavender color for numbers */
+}
+
+/* Optional: Add a heartbeat animation to the countdown */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Apply heartbeat animation to the countdown number */
+.countdown span {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
